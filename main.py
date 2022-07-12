@@ -17,27 +17,27 @@ dp = Dispatcher(bot)
 
 
 
-# @dp.message_handler(commands='voiceUA')
-# async def ua(message: types.Message):
-# 	await bot.send_message(message.chat.id, 'що хочете озвучити?')#, reply_markup=markup)
-# @dp.message_handler()
-# async def mesUA(message: types.Message):
-# 	t = gTTS(text=message.text, lang='uk', slow=False)
-# 	t.save(f"{message.text}.mp3")
-# 	await bot.send_audio(message.chat.id, open(f'{message.text}.mp3', 'rb'))
-# 	os.remove(f"{message.text}.mp3")
-
-
-
-@dp.message_handler(commands='voiceRU')
-async def ruu(message: types.Message):
-	await bot.send_message(message.chat.id, 'что хотите озвучить?')#, reply_markup=markup)
+@dp.message_handler(commands='voice')
+async def ua(message: types.Message):
+	await bot.send_message(message.chat.id, 'send text in me voice')#, reply_markup=markup)
 @dp.message_handler()
-async def ryski(message: types.Message):
+async def mesUA(message: types.Message):
+	t = gTTS(text=message.text, lang='uk', slow=False)
+	t.save(f"Українською.mp3")
+	await bot.send_audio(message.chat.id, open(f'Українською.mp3', 'rb'))
+	os.remove(f"Українською.mp3")
+
+
+
+# @dp.message_handler(commands='voiceRU')
+# async def ruu(message: types.Message):
+# 	await bot.send_message(message.chat.id, 'что хотите озвучить?')#, reply_markup=markup)
+# @dp.message_handler()
+# async def ryski(message: types.Message):
 	t = gTTS(text=message.text, lang='ru', slow=False)
-	t.save(f"audio.mp3")
-	await bot.send_audio(message.chat.id, open(f'audio.mp3', 'rb'))
-	os.remove(f"audio.mp3")
+	t.save(f"Русской.mp3")
+	await bot.send_audio(message.chat.id, open(f'Русской.mp3', 'rb'))
+	os.remove(f"Русской.mp3")
 
 
 
@@ -46,10 +46,10 @@ async def ryski(message: types.Message):
 # 	await bot.send_message(message.chat.id, 'what do you want to say?')#, reply_markup=markup)
 # @dp.message_handler()
 # async def engli(message: types.Message):
-# 	t = gTTS(text=message.text, lang='en', slow=False)
-# 	t.save(f"{message.text}.mp3")
-# 	await bot.send_audio(message.chat.id, open(f'{message.text}.mp3', 'rb'))
-# 	os.remove(f"{message.text}.mp3")
+	t = gTTS(text=message.text, lang='en', slow=False)
+	t.save(f"English.mp3")
+	await bot.send_audio(message.chat.id, open(f'English.mp3', 'rb'))
+	os.remove(f"English.mp3")
 
 
 
