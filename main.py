@@ -35,9 +35,9 @@ async def ruu(message: types.Message):
 @dp.message_handler()
 async def ryski(message: types.Message):
 	t = gTTS(text=message.text, lang='ru', slow=False)
-	t.save(f"{message.text}.mp3")
-	await bot.send_audio(message.chat.id, open(f'{message.text}.mp3', 'rb'))
-	os.remove(f"{message.text}.mp3")
+	t.save(f"audio.mp3")
+	await bot.send_audio(message.chat.id, open(f'audio.mp3', 'rb'))
+	os.remove(f"audio.mp3")
 
 
 
